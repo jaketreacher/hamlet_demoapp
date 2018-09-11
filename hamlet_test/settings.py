@@ -25,7 +25,7 @@ SECRET_KEY = 'very_secret'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.33.10', 'localhost']
+ALLOWED_HOSTS = ['hamlet-test', '192.168.33.10', 'localhost']
 
 
 # Application definition
