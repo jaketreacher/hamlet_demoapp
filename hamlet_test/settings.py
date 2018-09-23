@@ -36,7 +36,21 @@ ALLOWED_HOSTS = config('ALLOWED_HOSTS',
 INSTALLED_APPS = [
     # 'django.contrib.contenttypes',
     'django.contrib.staticfiles',
-    'web'
+    'web',
+    'compressor'
+]
+
+STATICFILES_FINDERS = [
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'compressor.finders.CompressorFinder',
+]
+
+COMPRESS_ENABLED = True
+COMPRESS_OFFLINE = config('COMPRESS_OFFLINE', default=False, cast=bool)
+
+COMPRESS_PRECOMPILERS = [
+    ('text/x-scss', 'node-sass {infile} {outfile}')
 ]
 
 MIDDLEWARE = [
